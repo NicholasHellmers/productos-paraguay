@@ -5,17 +5,17 @@ const supabaseUrl = 'https://litoocyffsmtnyjpuebv.supabase.co'
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-async function getCountries() {
-  const { data } = await supabase.from("countries").select();
+async function getData() {
+  const { data } = await supabase.from("test").select();
   return data;
 }
 
 function App() {
-  const [countries] = createResource(getCountries);
+  const [test_data] = createResource(getData);
 
   return (
     <ul>
-      <For each={countries()}>{(country) => <li>{country.name}</li>}</For>
+      <For each={test_data()}>{(entry) => <li>{entry.id} {entry.username}</li>}</For>
     </ul>
   );
 }
