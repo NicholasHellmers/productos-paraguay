@@ -15,6 +15,8 @@ async function searchProducts(searchTerm) {
 }
 
 export default function Search() {
+    const [searchData, setSearchData] = useState(searchProducts(""));
+
     return (
         <div className='flex justify-center'>
             <input
