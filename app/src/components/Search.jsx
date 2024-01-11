@@ -15,7 +15,7 @@ async function searchProducts(searchTerm) {
 }
 
 export default function Search() {
-    const [searchData, setSearchData] = useState(searchProducts(""));
+    // const [searchData, setSearchData] = useState(searchProducts(""));
 
     return (
         <div className='flex justify-center'>
@@ -23,7 +23,7 @@ export default function Search() {
                 type="text"
                 placeholder="Search"
                 className='border-2 border-black rounded-lg'
-                onChange={(e) => {
+                oninput={(e) => {
                     searchProducts(e.target.value);
                 }}
             />
