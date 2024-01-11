@@ -22,7 +22,7 @@ function App() {
         <ul className='grid grid-cols-5 gap-5 md:w-[80%]'>
           <For each={test_data()}>{(entry) => <ul className='border rounded' id={entry.id}>
             <a href={entry.product_url}>
-              <img className='max-w-[100%] max-h-48' src={entry.image_url} alt={entry.name} />
+              {/* <img className='max-w-[100%] max-h-48' src={entry.image_url} alt={entry.name} /> */}
               <li className="capitalize">{entry.name}</li>
               <li>{entry.price}</li>
               <li>{entry.supermarket}</li>
