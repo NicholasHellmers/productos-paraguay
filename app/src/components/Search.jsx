@@ -13,7 +13,6 @@ async function fetchData(searchTerm) {
     // or equal to the optional data passed: `refetch(info)`
     if (searchTerm === "") return [];
     const { data } = await supabase.from("products").select("*").ilike("name", `%${searchTerm}%`).limit(5);
-    console.log(data);
     return data;
 }
 
@@ -22,16 +21,21 @@ export default function Search() {
     const [data] = createResource(searchTerm, fetchData);
 
     return (
-        <>
+        <div className="w-fit m-auto py-12" >
             <input
-                className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-[300px]"
                 type="text"
                 value={searchTerm()}
                 onInput={(e) => setSearchTerm(e.target.value)}
             />
-            <ul>
-                <For each={data()}>{(entry) => <li>{entry.name}</li>}</For>
-            </ul>
-        </>
+            {<ul class="border fixed bg-white w-[300px]">
+                <For each={data()}>{(entry) => 
+                    <ul className="border hover:bg-slate-100 w-[300px]">
+                        <li>{entry.name}</li>
+                        <li>{entry.price}</li>
+                    </ul>
+                }</For>
+            </ul>}
+        </div>
     );
 }
