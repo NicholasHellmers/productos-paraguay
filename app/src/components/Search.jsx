@@ -6,11 +6,6 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function fetchData(searchTerm) {
-    // Fetch the data and return a value.
-    //`source` tells you the current value of the source signal;
-    //`value` tells you the last returned value of the fetcher;
-    //`refetching` is true when the fetcher is triggered by calling `refetch()`,
-    // or equal to the optional data passed: `refetch(info)`
     if (searchTerm === "") return [];
     const { data } = await supabase.from("products").select("*").ilike("name", `%${searchTerm}%`).limit(5);
     return data;
