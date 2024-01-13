@@ -21,18 +21,19 @@ export default function Search() {
     const [data] = createResource(searchTerm, fetchData);
 
     return (
-        <div className="w-fit m-auto py-12" >
+        <div className="w-fit mx-auto my-10 border border-gray-300  bg-white " >
             <input
-                className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-[300px]"
+                className="bg-white h-10 px-5 pr-16 text-sm focus:outline-none w-[300px]"
                 type="text"
                 value={searchTerm()}
                 onInput={(e) => setSearchTerm(e.target.value)}
             />
-            {<ul class="border fixed bg-white w-[300px]">
+            {searchTerm() !== "" && <ul class="border fixed bg-white w-[300px]">
                 <For each={data()}>{(entry) => 
                     <ul className="border hover:bg-slate-100 w-[300px]">
                         <li>{entry.name}</li>
                         <li>{entry.price}</li>
+                        <li>{entry.supermarket}</li>
                     </ul>
                 }</For>
             </ul>}
