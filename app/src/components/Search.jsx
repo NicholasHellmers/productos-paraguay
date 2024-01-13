@@ -23,7 +23,7 @@ export default function Search() {
                 value={searchTerm()}
                 onInput={(e) => setSearchTerm(e.target.value)}
             />
-            {searchTerm() !== "" && <ul class="border fixed bg-white w-[300px]">
+            {searchTerm() !== "" && <ul class="border absolute bg-white w-[300px]">
                 <For each={data()}>{(entry) => 
                     <ul className="border hover:bg-slate-100 w-[300px]">
                         <li>{entry.name}</li>
