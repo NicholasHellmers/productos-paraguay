@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className='py-24'>
+      <Header />
       {/* Generate search bar that shows drop down of search results*/}
       <Search />
       <div className='flex justify-center'>
