@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { createResource, For } from "solid-js";
 import Search from "./components/Search";
+import Header from "./components/Header";
 
 const supabaseUrl = 'https://litoocyffsmtnyjpuebv.supabase.co'
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
