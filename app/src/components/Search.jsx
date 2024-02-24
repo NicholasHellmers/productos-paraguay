@@ -17,6 +17,7 @@ export default function Search() {
 
     return (
         <div className="w-fit mx-auto my-10 border border-gray-300  bg-white " >
+            {/* Is submit for to send to url of whatever is in the input tag */}
             <input
                 className="bg-white h-10 px-5 pr-16 text-sm focus:outline-none w-[300px]"
                 type="text"
@@ -32,6 +33,13 @@ export default function Search() {
                     </ul>
                 }</For>
             </ul>}
+            <button 
+                className='bg-gray-200 p-3'
+                onClick={() => window.location.href = `/?search=${searchTerm()}`}
+            >
+                Search
+            </button>
+            
         </div>
     );
 }
