@@ -35,7 +35,8 @@ export default function Search() {
             </ul>}
             <button 
                 className='bg-gray-200 p-3'
-                onClick={() => window.location.href = `/?search=${searchTerm()}`}
+                onClick={() => {
+                    window.location.href = searchTerm() ? `/?search=${searchTerm()}` : "/";}}
             >
                 Search
             </button>
