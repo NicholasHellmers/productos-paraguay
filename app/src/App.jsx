@@ -29,7 +29,7 @@ function App() {
         <div className='flex justify-center'>
           <ul className='grid sm:grid-cols-2 md:grid-cols-4 gap-5 md:w-[80%]'>
             <For each={test_data()}>{(entry) => <ul className='border rounded p-2 w-[90vw] sm:w-[40vw] md:w-[20vw]' id={entry.id}>
-              <a href={entry.product_url}>
+              <a href={entry.product_url} target="_blank">
                 {/* <img className='max-w-[100%] max-h-48' src={entry.image_url} alt={entry.name} /> */}
                 <li className="capitalize">{entry.name}</li>
                 <li>{entry.price}</li>

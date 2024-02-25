@@ -26,11 +26,13 @@ export default function Search() {
             />
             {searchTerm() !== "" && <ul class="border absolute bg-white w-[300px]">
                 <For each={data()}>{(entry) => 
+                <a href={entry.product_url} target="_blank">
                     <ul className="border hover:bg-slate-100 w-[300px]">
                         <li>{entry.name}</li>
                         <li>{entry.price}</li>
                         <li>{entry.supermarket}</li>
                     </ul>
+                </a>
                 }</For>
             </ul>}
             <button 
