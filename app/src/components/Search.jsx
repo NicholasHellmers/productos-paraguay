@@ -16,18 +16,18 @@ export default function Search() {
     const [data] = createResource(searchTerm, fetchData);
 
     return (
-        <div className="w-fit mx-auto my-10 border border-gray-300  bg-white " >
+        <div className="w-fit mx-auto my-10 border border-gray-300 rounded-lg bg-[#1d1b22] " >
             {/* Is submit for to send to url of whatever is in the input tag */}
             <input
-                className="bg-white h-10 px-5 pr-16 text-sm focus:outline-none w-[300px]"
+                className="bg-[#1d1b22] h-10 px-5 pr-16 text-sm focus:outline-none w-[300px]"
                 type="text"
                 value={searchTerm()}
                 onInput={(e) => setSearchTerm(e.target.value)}
             />
-            {searchTerm() !== "" && <ul class="border absolute bg-white w-[300px]">
+            {searchTerm() !== "" && <ul class="border absolute bg-[#1d1b22] w-[300px]">
                 <For each={data()}>{(entry) => 
                 <a href={entry.product_url} target="_blank">
-                    <ul className="border hover:bg-slate-100 w-[300px]">
+                    <ul className="border hover:bg-slate-500 w-[300px]">
                         <li>{entry.name}</li>
                         <li>{entry.price}</li>
                         <li>{entry.supermarket}</li>
@@ -36,7 +36,7 @@ export default function Search() {
                 }</For>
             </ul>}
             <button 
-                className='bg-gray-200 p-3'
+                className='bg-[#1d1b22] rounded-lg p-3'
                 onClick={() => {
                     window.location.href = searchTerm() ? `/?search=${searchTerm()}` : "/";}}
             >
