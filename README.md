@@ -7,7 +7,7 @@ Check out the live website here: [productos-paraguay.vercel.app](https://product
 
 ## 🛠️ Tech Stack
 
-- **UI Framework**: [Solid JS](https://solidjs.com/)
+- **Front-End Framework**: [Solid JS](https://solidjs.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Database**: [Supabase](https://supabase.com/) with Postgres
 - **Cloud Provider**: Vercel for frontend, AWS for backend services
